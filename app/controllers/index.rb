@@ -1,4 +1,13 @@
-##IF TIME ADD ERROR MESSAGES FOR SIGN IN WHERE USER EXISTS OR PW IS WRONG
+
+
+# post '/surveys/:survey_id/responses'
+#   #choice from form
+#   #user from session
+#   #params.merge(:user_id => session[:user_id])
+#   response = Response.new(params)
+# end
+
+
 
 get '/' do
  #Show all users if user is signed in

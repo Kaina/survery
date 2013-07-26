@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :surveys
-  has_many :reponses
-  has_many :taken_surveys, through: responses, source: :survey
+  has_many :responses
+  has_many :taken_surveys, through: :responses, source: :survey
+  has_many :choices, through: :responses
 
 
   validates_uniqueness_of :email, :username
