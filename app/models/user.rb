@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   #Use bcrypt to store hashed passwords and authenticate users
   include BCrypt
 
+  has_many :surveys
+  has_many :reponses
+  has_many :taken_surveys, through: responses, source: :survey
+
+
   validates_uniqueness_of :email, :username
   validates_presence_of :email, :username, :password
 
